@@ -1,0 +1,34 @@
+{
+	"version": "2.0.0",
+	"options":{
+		"cwd": "${workspaceFolder}/build"
+	},
+	"tasks": [
+		{
+			"type": "shell",
+            "label":"cmake",
+            "command":"cmake -G \"MinGW Makefiles\"",
+            "args":[
+            	".."
+            ]
+		},
+		{
+			"label":"make",
+			"group":{
+				"kind":"build",
+				"isDefault":true
+			},
+			"command":"mingw32-make.exe",
+			"args":[
+			
+			]
+		},
+		{
+			"label":"BUILD",
+			"dependsOn":[
+				"cmake",
+				"make"
+			]
+		}
+	]
+}
